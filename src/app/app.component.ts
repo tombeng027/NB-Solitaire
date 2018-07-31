@@ -17,6 +17,7 @@ export class AppComponent {
 
   clearTable(): void{
     this.deckservice.clearTable();
+    this.manserv.total = 0;
   }
 
   replay(): void{

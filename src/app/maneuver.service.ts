@@ -124,13 +124,12 @@ export class Manserv {
     }
     this.fromwaste = 0;
     this.clear();
+    this.total++;
     this.winGame(); 
+    console.log(this.total);
   }
 
   winGame(): void{
-    for(let x = 0; x < 4;x++){
-      this.total += foundation[x].length;
-    }
     if(this.win == this.total){
         this.total = 0;
         this.congratulate();

@@ -70,6 +70,7 @@ export class Manserv {
       this.card = wastepile[wastepile.length -1];
     }else{
       if(!card.facedown){
+        this.fromwaste = 0;
         this.from = from;
         this.card = card;
         this.index = maneuver[from].indexOf(card);
@@ -96,6 +97,7 @@ export class Manserv {
     if(this.fromwaste == 0){
         if(foundation[int].length == 0 && maneuver[this.from][maneuver[this.from].length-1].rank == 1){
           foundation[int].push(maneuver[this.from].pop());
+          this.total++;
           this.getMoveLog(1);
           if(!(maneuver[this.from].length==0)){
             maneuver[this.from][maneuver[this.from].length-1].Flip();
@@ -103,6 +105,7 @@ export class Manserv {
         }else if(this.card.suit == foundation[int][foundation[int].length-1].suit && 
           this.card.rank == (foundation[int][foundation[int].length-1].rank + 1)){
           foundation[int].push(maneuver[this.from].pop());
+          this.total++;
           this.getMoveLog(1);
           if(!(maneuver[this.from].length==0)){
             maneuver[this.from][maneuver[this.from].length-1].Flip();
@@ -112,21 +115,21 @@ export class Manserv {
         }
     }else{
         if(foundation[int].length == 0 && this.card.rank == 1){
-          foundation[int].push(wastepile.pop());          
+          foundation[int].push(wastepile.pop()); 
+          this.total++;         
           this.getMoveLog(1);
         }else if(this.card.suit == foundation[int][foundation[int].length-1].suit &&
            this.card.rank == (foundation[int][foundation[int].length-1].rank + 1)){
-          foundation[int].push(wastepile.pop());          
+          foundation[int].push(wastepile.pop());  
+          this.total++;        
           this.getMoveLog(1);
         }else{
           this.getMoveLog(0);
         }  
     }
     this.fromwaste = 0;
-    this.clear();
-    this.total++;
+    this.clear(); 
     this.winGame(); 
-    console.log(this.total);
   }
 
   winGame(): void{

@@ -129,6 +129,7 @@ export class Manserv {
     }
     this.fromwaste = 0;
     this.clear(); 
+
     this.winGame(); 
   }
 
@@ -152,13 +153,16 @@ export class Manserv {
   moveall(): void{
     while (wastepile.length > 0){
       foundation[0].push(wastepile.pop());
+      this.total++;
     }
     while(Cards.length > 0){
       foundation[1].push(Cards.pop());
+      this.total++;
     }
     for(let x = 0; x < 7; x++){
       while(maneuver[x].length > 0){   
           foundation[2].push(maneuver[x].pop());
+          this.total++;
       }
     }
   }

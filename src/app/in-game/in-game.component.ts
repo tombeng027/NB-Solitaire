@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../card';
 import { DeckService } from '../deck.service';
-import { Manserv } from '../maneuver.service';
-import { Cards,maneuver,foundation,wastepile } from '../deck';
+import { CardService } from '../card.service';
+import { cards,maneuver,foundation,wastepile } from '../deck';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { Cards,maneuver,foundation,wastepile } from '../deck';
   styleUrls: ['./in-game.component.css']
 })
 export class InGameComponent implements OnInit {
-  deck = Cards;
+  deck = cards;
   last: number;
   topofdeck: String;
   empty = "../assets/empty.png";
@@ -23,7 +23,7 @@ export class InGameComponent implements OnInit {
 
   constructor(
     private deckservice: DeckService, 
-    private manserv: Manserv,
+    private cardservice: CardService,
   ){}
   
   ngOnInit(){

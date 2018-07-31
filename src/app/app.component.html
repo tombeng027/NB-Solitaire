@@ -1,24 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<!--Menu bar-->
-<div id='index' style="text-align:center">
-  <div id='menu'>
-    <p id='title'>Klondike Solitaire</p>
-    <div id="message">Message</div>
-    <div id="scoreboard"></div>
-    <div class='menubutton' (click)="clearTable()" routerLink="/Draw">New Game</div>
-  </div>
-  
-</div>
-<img class="welcome" src="../assets/aces.png">
+<app-mainmenu></app-mainmenu>
 <!--Ingame-->
 <router-outlet></router-outlet>
-<div id="modal">
-  <div class="modal-content" (click)="replay()">
-    <div class="awesome">Super Awesome</div>
-    <img src="../assets/win.gif">
-    <div>click to start another game...</div>
-  </div>
-</div>
 
 
 

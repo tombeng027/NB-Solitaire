@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { DeckService } from './deck.service';
-import { Manserv } from './maneuver.service';
+
 
 
 
@@ -13,16 +12,8 @@ import { Manserv } from './maneuver.service';
 export class AppComponent {
   title = 'Solitaire';
 
-  constructor(private deckservice: DeckService, private manserv: Manserv){}
+  constructor(){}
 
-  clearTable(): void{
-    this.deckservice.clearTable();
-    this.manserv.total = 0;
-  }
 
-  replay(): void{
-    document.getElementById("modal").style.display = "none";
-    this.clearTable();
-  }
   
 }

@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { Manserv } from './maneuver.service';
+import { CardService } from './card.service';
 
 describe('Manserv', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [Manserv]
+      providers: [CardService]
     });
   });
 
-  it('should be created', inject([Manserv], (service: Manserv) => {
+  it('should be created', inject([CardService], (service: CardService) => {
     expect(service).toBeTruthy();
   }));
 });

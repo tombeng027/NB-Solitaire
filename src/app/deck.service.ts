@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Card } from './card';
-import { Cards,foundation,maneuver } from './deck';
+import { cards,foundation,maneuver } from './deck';
 import { wastepile } from './deck';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeckService {
-  Deck = Cards;
+  Deck = cards;
   draw:number;
   constructor() { }
   
@@ -94,8 +94,8 @@ export class DeckService {
   }
 
   clearTable(){
-    while(!(Cards.length == 0)){
-      Cards.pop();
+    while(!(cards.length == 0)){
+      cards.pop();
     }
     while(!(wastepile.length == 0)){
       wastepile.pop();

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Card } from './card';
 import { wastepile } from './deck';
-import { Cards,foundation,maneuver, run } from './deck';
+import { cards,foundation,maneuver, run } from './deck';
 import { MessageService } from './message.service';
 
 
@@ -9,7 +9,7 @@ import { MessageService } from './message.service';
 @Injectable({
   providedIn: 'root'
 })
-export class Manserv {
+export class CardService {
   from: number;
   index:number;
   card: Card;
@@ -127,7 +127,6 @@ export class Manserv {
     }
     this.fromwaste = 0;
     this.clear(); 
-
     this.winGame(); 
   }
 
@@ -153,8 +152,8 @@ export class Manserv {
       foundation[0].push(wastepile.pop());
       this.total++;
     }
-    while(Cards.length > 0){
-      foundation[1].push(Cards.pop());
+    while(cards.length > 0){
+      foundation[1].push(cards.pop());
       this.total++;
     }
     for(let x = 0; x < 7; x++){

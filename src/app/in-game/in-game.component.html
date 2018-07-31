@@ -6,23 +6,24 @@
     <div id='waste'>
       <img src="{{getImgSrc(waste)}}" >  
       <img src="{{getImgSrc(waste,1)}}" >
-      <img src="{{getImgSrc(waste,0)}}" (drag)="manserv.getRun(0,card,1)">
+      <img src="{{getImgSrc(waste,0)}}" (drag)="cardservice.getRun(0,card,1)">
     </div>
 </div>
 
 <!--foundation div-->
 <div id='foundation'>
-    <img src="{{getFoundSrc(0)}}" (dragover)="manserv.allowDrop($event)" (drop)="manserv.moveToFoundation($event,0)">
-    <img src="{{getFoundSrc(1)}}" (dragover)="manserv.allowDrop($event)" (drop)="manserv.moveToFoundation($event,1)">
-    <img src="{{getFoundSrc(2)}}" (dragover)="manserv.allowDrop($event)" (drop)="manserv.moveToFoundation($event,2)">
-    <img src="{{getFoundSrc(3)}}" (dragover)="manserv.allowDrop($event)" (drop)="manserv.moveToFoundation($event,3)">
+    <img src="{{getFoundSrc(0)}}" (dragover)="cardservice.allowDrop($event)" (drop)="cardservice.moveToFoundation($event,0)">
+    <img src="{{getFoundSrc(1)}}" (dragover)="cardservice.allowDrop($event)" (drop)="cardservice.moveToFoundation($event,1)">
+    <img src="{{getFoundSrc(2)}}" (dragover)="cardservice.allowDrop($event)" (drop)="cardservice.moveToFoundation($event,2)">
+    <img src="{{getFoundSrc(3)}}" (dragover)="cardservice.allowDrop($event)" (drop)="cardservice.moveToFoundation($event,3)">
   </div>
 
 <!--Maneuver div-->
 <div id='maneuver'>
     <div class='row'>
-        <div class= 'column' *ngFor="let pile of maneuver; let i = index"  (dragover)="manserv.allowDrop($event)" (drop)="manserv.moveToPile($event,i)">
-            <img class="card" *ngFor="let card of pile" src="{{card.getImgSrc()}}"   (drag)="manserv.getRun(i,card)">
+        <div class= 'column' *ngFor="let pile of maneuver; let i = index"  (dragover)="cardservice.allowDrop($event)" (drop)="cardservice.moveToPile($event,i)">
+            <img class="card" *ngFor="let card of pile" src="{{card.getImgSrc()}}"   (drag)="cardservice.getRun(i,card)">
         </div>
     </div>
 </div>
+<app-gameresult></app-gameresult>

@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Card } from './card';
-import { Cards } from './deck';
-import { maneuver } from './maneuver';
+import { Cards,foundation,maneuver } from './deck';
 import { wastepile } from './deck';
-import { foundation } from './foundation';
 
 @Injectable({
   providedIn: 'root'

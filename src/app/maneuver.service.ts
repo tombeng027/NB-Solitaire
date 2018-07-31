@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import { foundation } from './foundation';
-import { maneuver, run } from './maneuver';
 import { Card } from './card';
 import { wastepile } from './deck';
-import { Cards } from './deck';
+import { Cards,foundation,maneuver, run } from './deck';
 import { MessageService } from './message.service';
-import { AppComponent } from './app.component';
+
 
 
 @Injectable({

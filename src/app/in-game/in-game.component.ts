@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../card';
 import { DeckService } from '../deck.service';
-import { maneuver } from '../maneuver';
 import { Manserv } from '../maneuver.service';
-import { wastepile } from '../deck';
-import { Cards } from '../deck';
-import { foundation } from '../foundation';
+import { Cards,maneuver,foundation,wastepile } from '../deck';
+
 
 @Component({
   selector: 'app-in-game',

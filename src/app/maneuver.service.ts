@@ -68,7 +68,6 @@ export class Manserv {
     if(int == 1){
       this.fromwaste = 1
       this.card = wastepile[wastepile.length -1];
-      this.index = wastepile.indexOf(card);
     }else{
       if(!card.facedown){
         this.from = from;
@@ -76,7 +75,6 @@ export class Manserv {
         this.index = maneuver[from].indexOf(card);
       }
     }
-    console.log(this.card)
   }
 
   clear(): void{
@@ -126,7 +124,6 @@ export class Manserv {
     }
     this.fromwaste = 0;
     this.clear();
-    
     this.winGame(); 
   }
 

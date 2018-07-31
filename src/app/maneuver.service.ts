@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { foundation } from './foundation';
-import { maneuver, run, pile1, pile4, pile3, pile2, pile5, pile6, pile7 } from './maneuver';
+import { maneuver, run } from './maneuver';
 import { Card } from './card';
 import { wastepile } from './deck';
 import { Cards } from './deck';

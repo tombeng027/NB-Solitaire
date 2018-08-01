@@ -22,7 +22,8 @@ export class CardService {
   scoreboard:string;
 
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService) { 
+  }
 
   allowDrop(ev) {
     ev.preventDefault();
@@ -59,7 +60,7 @@ export class CardService {
       }
     }
     this.fromwaste = 0;
-    this.clear();
+    this.clear();   
   }
   
   getRun(from: number, card: Card,int: number): void {

@@ -7,30 +7,30 @@ import { wastepile } from './deck';
   providedIn: 'root'
 })
 export class DeckService {
-  Deck = cards;
+
   draw:number;
   constructor() { }
   
   createDeck(): Card[] {
     var x;
     for(x=1;x<14;x++){
-      this.Deck.push(new Card("D", x))
+      cards.push(new Card("D", x))
     }
     for(x=1;x<14;x++){
-      this.Deck.push(new Card("H", x))
+      cards.push(new Card("H", x))
     }
     for(x=1;x<14;x++){
-      this.Deck.push(new Card("S", x))
+      cards.push(new Card("S", x))
     }
     for(x=1;x<14;x++){
-      this.Deck.push(new Card("C", x))
+      cards.push(new Card("C", x))
     }
     this.shuffle();
-    return this.Deck;
+    return cards;
   }
 
   shuffle(): Card[] {
-    var currentIndex = this.Deck.length;
+    var currentIndex = cards.length;
     var temporaryValue, randomIndex;
     
     while (0 !== currentIndex) {
@@ -38,11 +38,11 @@ export class DeckService {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
   
-      temporaryValue = this.Deck[currentIndex];
-      this.Deck[currentIndex] = this.Deck[randomIndex];
-      this.Deck[randomIndex] = temporaryValue;
+      temporaryValue = cards[currentIndex];
+      cards[currentIndex] = cards[randomIndex];
+      cards[randomIndex] = temporaryValue;
     }
-    return this.Deck;
+    return cards;
   }
 
   distributeCards(): void {
@@ -54,7 +54,7 @@ export class DeckService {
         i = z;
         x = z + 1;
         while (i < 7) {
-           maneuver[i].push(this.Deck.pop());
+           maneuver[i].push(cards.pop());
           i++;
         }
         if (x > 6) {
@@ -69,16 +69,16 @@ export class DeckService {
 
   drawCard(): void{
 
-    if(this.Deck.length == 0){
+    if(cards.length == 0){
       while(!(wastepile.length == 0)){
         wastepile[wastepile.length-1].setFaceDown();
-        this.Deck.push(wastepile.pop());
+        cards.push(wastepile.pop());
       }
     }else{
       for(let c = 0; c < this.draw; c++){
-          if(!(this.Deck.length == 0)){
-            this.Deck[this.Deck.length-1].Flip();
-            wastepile.push(this.Deck.pop());
+          if(!(cards.length == 0)){
+            cards[cards.length-1].Flip();
+            wastepile.push(cards.pop());
           }else{
             break;
           }

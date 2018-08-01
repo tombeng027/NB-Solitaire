@@ -13,14 +13,13 @@ import { cards,maneuver,foundation,wastepile } from '../deck';
 })
 export class InGameComponent implements OnInit {
   deck = cards;
+  maneuver = maneuver;
+  waste = wastepile;
   last: number;
   topofdeck: String;
   empty = "../assets/empty.png";
   back = "../assets/back.png";
  
-  maneuver = maneuver;
-  
-  waste = wastepile;
 
   constructor(
     private deckservice: DeckService, 
@@ -61,11 +60,12 @@ export class InGameComponent implements OnInit {
     var img = <HTMLImageElement> document.getElementById("sub");
     var canvas = <HTMLCanvasElement> document.getElementById("cardstomove");
     var ctx = canvas.getContext("2d");
-    let x = 0, y = 0;
-    for(let z = index; z<maneuver[index].length;z++){
+    setTimeout(ctx.clearRect(0,0,canvas.width,canvas.height));
+    let y = 0;
+    for(let z = maneuver[index].indexOf(card); z<maneuver[index].length;z++){
       img.src = maneuver[index][z].imgsrc;
-       ctx.drawImage(img,x,y,300,60);
-      y += 25;
+       ctx.drawImage(img,0,y,300,58);
+      y += 11;
     }
     ev.dataTransfer.setDragImage(canvas, 50, 50);
   }

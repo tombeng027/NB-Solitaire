@@ -5,6 +5,7 @@ import { CardService } from '../card.service';
 import { cards,maneuver,foundation,wastepile } from '../deck';
 
 
+
 @Component({
   selector: 'app-in-game',
   templateUrl: './in-game.component.html',
@@ -27,9 +28,8 @@ export class InGameComponent implements OnInit {
   ){}
   
   ngOnInit(){
-
   }
-
+  
   getImgSrc(cards: Card[],int: number): string{ 
     if(cards.length == 0){
       return this.empty;
@@ -57,5 +57,17 @@ export class InGameComponent implements OnInit {
         return foundation[int][foundation[int].length-1].imgsrc;
   }
 
+  dragStart_Handler(ev,index:number,card: Card):void{
+    var img = <HTMLImageElement> document.getElementById("sub");
+    var canvas = <HTMLCanvasElement> document.getElementById("cardstomove");
+    var ctx = canvas.getContext("2d");
+    let x = 0, y = 0;
+    for(let z = index; z<maneuver[index].length;z++){
+      img.src = maneuver[index][z].imgsrc;
+       ctx.drawImage(img,x,y,300,60);
+      y += 25;
+    }
+    ev.dataTransfer.setDragImage(canvas, 50, 50);
+  }
   
 }

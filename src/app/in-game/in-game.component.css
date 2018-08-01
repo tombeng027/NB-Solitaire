@@ -106,6 +106,18 @@
     padding: 1% 2% 1% 1%;
 }
 
+#cardstomove{
+    position: fixed;
+    top: -999999px;
+    width: 80px;
+    height: 260px;
+}
+#sub{
+    display: none;
+    width: 80px;
+    height: 100px;
+}
+
 /*for responsive*/
 @media only screen and (max-width: 440px) {
 

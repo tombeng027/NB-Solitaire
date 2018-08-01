@@ -22,8 +22,10 @@
 <div id='maneuver'>
     <div class='row'>
         <div class= 'column' *ngFor="let pile of maneuver; let i = index"  (dragover)="cardservice.allowDrop($event)" (drop)="cardservice.moveToPile($event,i)">
-            <img class="card" *ngFor="let card of pile" src="{{card.getImgSrc()}}"   (drag)="cardservice.getRun(i,card)">
+            <img class="card" *ngFor="let card of pile" src="{{card.getImgSrc()}}" (dragstart)="dragStart_Handler($event,i,card)"  (drag)="cardservice.getRun(i,card)">
         </div>
     </div>
 </div>
 <app-gameresult></app-gameresult>
+<canvas id="cardstomove"></canvas>
+<img id="sub">

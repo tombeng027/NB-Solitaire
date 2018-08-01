@@ -4,6 +4,7 @@ export class Card {
     color: string;
     facedown: boolean;
     imgsrc: string;
+    
 
     constructor (char: string, num: number){
       this.suit = char;

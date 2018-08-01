@@ -68,7 +68,7 @@ export class InGameComponent implements OnInit {
        ctx.drawImage(img,0,y,300,58);
       y += 11;
     }
-    ev.dataTransfer.setDragImage(canvas, 50, 50);
+    ev.dataTransfer.setDragImage(canvas, 20,20);
   }
   
 }

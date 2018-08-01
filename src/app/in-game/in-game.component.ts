@@ -60,6 +60,7 @@ export class InGameComponent implements OnInit {
     var img = <HTMLImageElement> document.getElementById("sub");
     var canvas = <HTMLCanvasElement> document.getElementById("cardstomove");
     var ctx = canvas.getContext("2d");
+    ctx.imageSmoothingEnabled = false;
     setTimeout(ctx.clearRect(0,0,canvas.width,canvas.height));
     let y = 0;
     for(let z = maneuver[index].indexOf(card); z<maneuver[index].length;z++){
